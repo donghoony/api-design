@@ -25,4 +25,5 @@
 
 ## 참고한 것
 - 인프콘 2023: 오늘도 여러분의 API는 안녕하신가요?: API First Design과 CodeGen 활용하기 (무료 강의로 열려 있습니다!)
-- https://github.com/LenKIM/openapi-code-gen
+- https://github.com/LenKIM/openapi-code-gen (위 발표의 참고 Github Repository)
+- https://openapi-generator.tech/ (Codegen)
