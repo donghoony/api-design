@@ -1,22 +1,16 @@
 package hoony.openapi.model;
 
-import java.net.URI;
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
-
-
-import java.util.*;
 import jakarta.annotation.Generated;
+import jakarta.validation.Valid;
+import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * GroupReviewResponse
  */
+@lombok.AllArgsConstructor
 
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", comments = "Generator version: 7.7.0")
 public class GroupReviewResponse {
@@ -128,4 +122,3 @@ public class GroupReviewResponse {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

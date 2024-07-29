@@ -6,6 +6,7 @@
   "hideGenerationTimestamp": true,
   "useJakartaEe": true,
   "useBeanValidation": true,
-  "interfaceOnly" : true,
-  "openApiNullable" : false
+  "interfaceOnly": true,
+  "openApiNullable": false,
+  "additionalModelTypeAnnotations": "@lombok.AllArgsConstructor"
 }
