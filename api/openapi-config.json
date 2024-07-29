@@ -1,0 +1,11 @@
+{
+  "sourceFolder": "",
+  "modelPackage": "hoony.openapi.model",
+  "apiPackage": "hoony.openapi.api",
+  "invokerPackage": "example",
+  "hideGenerationTimestamp": true,
+  "useJakartaEe": true,
+  "useBeanValidation": true,
+  "interfaceOnly" : true,
+  "openApiNullable" : false
+}

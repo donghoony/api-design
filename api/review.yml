@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Review
+servers:
+  - url: https://review-me.page
+    description: Dev server
+
+paths:
+  /reviews:
+    get:
+      summary: 리뷰 그룹의 모든 리뷰를 조회합니다.
+      operationId: findReviews # 메서드 이름
+      tags:
+        - review
+      parameters:
+        - in: query
+          name: groupId
+          schema:
+            type: integer
+            format: int64
+            example: 43
+          description: 리뷰 그룹 아이디
+
+      responses:
+        '200':
+          description: 해당 리뷰 그룹의 모든 리뷰를 반환합니다.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GroupReviewResponse'
+
+components:
+  schemas:
+    GroupReviewResponse:
+      type: object
+      properties:
+        reviewId:
+          type: integer
+          format: int64
+          description: 리뷰 ID
+          example: 2435
+        createdAt:
+          type: date
+          format: yyyy-MM-dd
+          description: 리뷰 생성 일자
+          example: 2024-07-29
+        contentPreview:
+          type: string
+          description: 리뷰 미리보기 (최대 150자)
+          example: 리뷰미 팀에서 멋쟁이 역할을 맡은 아루는~~~
