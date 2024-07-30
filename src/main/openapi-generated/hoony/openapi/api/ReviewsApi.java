@@ -69,7 +69,7 @@ public interface ReviewsApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "[ { \"createdAt\" : \"2024-07-29\", \"contentPreview\" : \"리뷰미 팀에서 멋쟁이 역할을 맡은 아루는~~~\", \"reviewId\" : 2435 }, { \"createdAt\" : \"2024-07-29\", \"contentPreview\" : \"리뷰미 팀에서 멋쟁이 역할을 맡은 아루는~~~\", \"reviewId\" : 2435 } ]";
+                    String exampleString = "[ { \"createdAt\" : \"2024-07-29\", \"contentPreview\" : \"리뷰미 팀에서 멋쟁이 역할을 맡은 아루는~~~\", \"keyword\" : { \"keywordId\" : 2435, \"keywordName\" : \"의견을 잘 조율해요\" }, \"reviewId\" : 2435 }, { \"createdAt\" : \"2024-07-29\", \"contentPreview\" : \"리뷰미 팀에서 멋쟁이 역할을 맡은 아루는~~~\", \"keyword\" : { \"keywordId\" : 2435, \"keywordName\" : \"의견을 잘 조율해요\" }, \"reviewId\" : 2435 } ]";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

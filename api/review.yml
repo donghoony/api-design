@@ -51,3 +51,18 @@ components:
           type: string
           description: 리뷰 미리보기 (최대 150자)
           example: 리뷰미 팀에서 멋쟁이 역할을 맡은 아루는~~~
+        keyword:
+          $ref: '#/components/schemas/PreviewKeywordResponse'
+
+    PreviewKeywordResponse:
+        type: object
+        properties:
+            keywordId:
+              type: integer
+              format: int64
+              description: 키워드 ID
+              example: 2435
+            keywordName:
+              type: string
+              description: 키워드 이름
+              example: 의견을 잘 조율해요

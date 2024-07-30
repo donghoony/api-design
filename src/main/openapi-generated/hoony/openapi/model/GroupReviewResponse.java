@@ -1,11 +1,19 @@
 package hoony.openapi.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.annotation.Generated;
-import jakarta.validation.Valid;
-import java.time.LocalDate;
+import java.net.URI;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import hoony.openapi.model.PreviewKeywordResponse;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
+import java.util.*;
+import jakarta.annotation.Generated;
 
 /**
  * GroupReviewResponse
@@ -20,6 +28,8 @@ public class GroupReviewResponse {
   private LocalDate createdAt = null;
 
   private String contentPreview;
+
+  private PreviewKeywordResponse keyword;
 
   public GroupReviewResponse reviewId(Long reviewId) {
     this.reviewId = reviewId;
@@ -81,6 +91,26 @@ public class GroupReviewResponse {
     this.contentPreview = contentPreview;
   }
 
+  public GroupReviewResponse keyword(PreviewKeywordResponse keyword) {
+    this.keyword = keyword;
+    return this;
+  }
+
+  /**
+   * Get keyword
+   * @return keyword
+   */
+  @Valid 
+  @Schema(name = "keyword", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("keyword")
+  public PreviewKeywordResponse getKeyword() {
+    return keyword;
+  }
+
+  public void setKeyword(PreviewKeywordResponse keyword) {
+    this.keyword = keyword;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -92,12 +122,13 @@ public class GroupReviewResponse {
     GroupReviewResponse groupReviewResponse = (GroupReviewResponse) o;
     return Objects.equals(this.reviewId, groupReviewResponse.reviewId) &&
         Objects.equals(this.createdAt, groupReviewResponse.createdAt) &&
-        Objects.equals(this.contentPreview, groupReviewResponse.contentPreview);
+        Objects.equals(this.contentPreview, groupReviewResponse.contentPreview) &&
+        Objects.equals(this.keyword, groupReviewResponse.keyword);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reviewId, createdAt, contentPreview);
+    return Objects.hash(reviewId, createdAt, contentPreview, keyword);
   }
 
   @Override
@@ -107,6 +138,7 @@ public class GroupReviewResponse {
     sb.append("    reviewId: ").append(toIndentedString(reviewId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    contentPreview: ").append(toIndentedString(contentPreview)).append("\n");
+    sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -122,3 +154,4 @@ public class GroupReviewResponse {
     return o.toString().replace("\n", "\n    ");
   }
 }
+
